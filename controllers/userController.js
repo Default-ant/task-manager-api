@@ -1,7 +1,7 @@
-import asyncHandler from "express-async-handler";
-import Notice from "../models/notis.js";
-import User from "../models/userModel.js";
-import createJWT from "../utils/index.js";
+const asyncHandler = require("express-async-handler");
+const Notice = require("../models/notis");
+const User = require("../models/userModel");
+const createJWT = require("../utils");
 
 // POST request - login user
 const loginUser = asyncHandler(async (req, res) => {
@@ -261,7 +261,7 @@ const deleteUserProfile = asyncHandler(async (req, res) => {
   res.status(200).json({ status: true, message: "User deleted successfully" });
 });
 
-export {
+module.exports= {
   activateUserProfile,
   changeUserPassword,
   deleteUserProfile,

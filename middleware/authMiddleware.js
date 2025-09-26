@@ -1,6 +1,6 @@
-import asyncHandler from "express-async-handler";
-import jwt from "jsonwebtoken";
-import User from "../models/userModel.js";
+const asyncHandler = require("express-async-handler");
+const jwt = require("jsonwebtoken");
+const User = require("../models/userModel");
 
 const protectRoute = asyncHandler(async (req, res, next) => {
   let token = req.cookies.token;
@@ -44,4 +44,4 @@ const isAdminRoute = (req, res, next) => {
   }
 };
 
-export { isAdminRoute, protectRoute };
+module.exports= { isAdminRoute, protectRoute };

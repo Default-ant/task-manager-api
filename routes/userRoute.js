@@ -1,5 +1,5 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   activateUserProfile,
   changeUserPassword,
   deleteUserProfile,
@@ -11,12 +11,11 @@ import {
   markNotificationRead,
   registerUser,
   updateUserProfile,
-} from "../controllers/userController.js";
-import { isAdminRoute, protectRoute } from "../middleware/authMiddleware.js";
+} = require("../controllers/userController");
 
+const { isAdminRoute, protectRoute } = require("../middleware/authMiddleware");
 
 const router = express.Router();
-
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
@@ -29,10 +28,11 @@ router.get("/get-status", protectRoute, isAdminRoute, getUserTaskStatus);
 router.put("/profile", protectRoute, updateUserProfile);
 router.put("/read-noti", protectRoute, markNotificationRead);
 router.put("/change-password", protectRoute, changeUserPassword);
-//   FOR ADMIN ONLY - ADMIN ROUTES
+
+// FOR ADMIN ONLY - ADMIN ROUTES
 router
   .route("/:id")
   .put(protectRoute, isAdminRoute, activateUserProfile)
   .delete(protectRoute, isAdminRoute, deleteUserProfile);
 
-export default router;
+module.exports = router;
