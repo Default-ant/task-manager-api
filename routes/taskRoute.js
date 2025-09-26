@@ -12,7 +12,7 @@ const {
   updateSubTaskStage,
   updateTask,
   updateTaskStage,
-} = require("../../functions/controllers/taskController");
+} = require("../controllers/taskController");
 
 const { isAdminRoute, protectRoute } = require("../middleware/authMiddleware");
 
