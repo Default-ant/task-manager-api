@@ -3,9 +3,9 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const express = require("express");
 const morgan = require("morgan");
-const { errorHandler, routeNotFound } = require("../functions/middleware/errorMiddleware");
-const routes = require("../functions/routes");
-const dbConnection = require("../functions/utils/connectDB");
+const { errorHandler, routeNotFound } = require("./middleware/errorMiddleware");
+const routes = require("./routes");
+const dbConnection = require("./utils/connectDB");
 
 dotenv.config();
 dbConnection();
