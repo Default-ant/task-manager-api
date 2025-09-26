@@ -1,7 +1,7 @@
-import asyncHandler from "express-async-handler";
-import Notice from "../models/notis.js";
-import Task from "../models/taskModel.js";
-import User from "../models/userModel.js";
+const asyncHandler = require("express-async-handler");
+const Notice = require("../models/notis");
+const Task = require("../models/taskModel");
+const User = require("../models/userModel");
 
 const createTask = asyncHandler(async (req, res) => {
   try {
