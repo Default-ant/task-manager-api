@@ -13,4 +13,5 @@ const createJWT = (res, userId) => {
   });
 };
 
+console.log("Cookie set for token:", token);
 module.exports = createJWT;
