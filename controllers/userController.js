@@ -189,11 +189,18 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
     user.password = undefined;
 
-    res.status(201).json({
-      status: true,
-      message: "Profile Updated Successfully.",
-      user: updatedUser,
-    });
+  res.status(201).json({
+    status: true,
+    message: "Profile Updated Successfully.",
+    user: {
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email, // ✅ uncomment this if needed
+      role: updatedUser.role,
+      title: updatedUser.title,
+      isActive: updatedUser.isActive,
+    },
+  });
   } else {
     res.status(404).json({ status: false, message: "User not found" });
   }
