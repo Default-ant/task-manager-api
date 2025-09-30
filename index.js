@@ -13,7 +13,7 @@ dbConnection();
 const app = express();
 
 app.use(cors({
-  origin: ["https://task-manager-client-7638.netlify.app","https://task-manager-client-axo0.onrender.com", "http://localhost:3000", "http://localhost:3001"],
+  origin: ["https://task-manager-client-01.onrender.com","https://task-manager-client-axo0.onrender.com", "http://localhost:3000", "http://localhost:3001"],
   methods: ["GET", "POST", "DELETE", "PUT"],
   credentials: true,
 }));
